@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="fill_parent"
+        android:layout_height="69dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:text="@string/FreeSubstribe" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:text="@string/Buy" />
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_height="74dp"
+            android:layout_width="0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/Title" />
+
+        <ImageButton
+            android:id="@+id/pageViewBtn"
+            android:layout_width="60dip"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/bookshelf_page"
+            android:src="@drawable/page" android:scaleType="fitXY" android:background="#00000000"/>
+
+
+        <ImageButton
+            android:id="@+id/listViewBtn"
+            android:layout_width="60dip"
+            android:layout_height="fill_parent"
+            android:background="#00000000"
+            android:contentDescription="@string/bookshelf_list"
+            android:scaleType="fitXY"
+            android:src="@drawable/list" />
+
+        <ImageButton
+            android:id="@+id/magazineInfoBtn"
+            android:layout_width="60dip"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/bookshelf_license"
+            android:src="@drawable/get_info" android:scaleType="fitXY"  android:background="#00000000" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@id/shelfLayer"
+        android:layout_marginTop="10dip"
+        android:layout_below="@id/topbar"
+        android:layout_width="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/leftpanel"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:layout_marginLeft="100dip"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/curMag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"/>
+            <TextView
+		        android:id="@+id/tv"
+		        android:layout_width="wrap_content"
+		        android:text="本期杂志"
+		        android:layout_height="wrap_content"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		    <FrameLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content">
+	        <Button
+		        android:id="@+id/btn"
+		        android:layout_width="wrap_content"
+		        android:layout_height="50dip"
+		        android:text="@string/downLoadBtn" />
+	
+	    	<ProgressBar
+		        android:id="@+id/progressBar1"
+		        style="?android:attr/progressBarStyleHorizontal"
+		        android:layout_width="wrap_content"
+		        android:layout_height="20dip"
+		        android:max="100"
+		        android:visibility="gone" />
+    </FrameLayout>
+        </LinearLayout>
+
+        <GridView 
+		    android:id="@+id/grid"
+		    android:layout_toRightOf="@id/leftpanel"
+		     android:layout_alignParentRight="true"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		    android:numColumns="2"
+		    android:verticalSpacing="10dip"
+		    android:layout_marginLeft="50dip"
+		/>
+    </RelativeLayout>
+
+</RelativeLayout>
